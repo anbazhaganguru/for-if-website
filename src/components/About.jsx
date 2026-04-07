@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import aboutImg from "../assets/about.jpg";
 
 export default function About() {
   return (
@@ -72,12 +73,12 @@ export default function About() {
           shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
 
             {/* IMAGE */}
-            <img
-              src="/src/assets/about.jpg"
-              alt="about"
-              className="w-full h-full object-cover 
-              transition duration-500 group-hover:scale-105"
-            />
+<img
+  src={aboutImg}
+  alt="about"
+  className="w-full h-full object-cover 
+  transition duration-500 group-hover:scale-105"
+/>
 
             {/* SOFT GLOW */}
             <div className="absolute w-32 h-32 bg-purple-500/20 blur-2xl 
