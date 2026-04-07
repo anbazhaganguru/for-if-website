@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-transparent text-white">
+    <div id="home" className="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-transparent text-white">
 
       {/* SUBTLE GRADIENT GLOW */}
       {/* <div className="absolute w-[500px] h-[500px] bg-gradient-to-r from-purple-600 to-pink-500 blur-3xl opacity-20 top-[-100px]"></div>

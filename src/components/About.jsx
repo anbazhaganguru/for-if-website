@@ -3,7 +3,7 @@ import aboutImg from "../assets/about.jpg";
 
 export default function About() {
   return (
-    <div className="relative bg-transparent text-white py-24 px-6 md:px-12 overflow-hidden">
+    <div id="about" className="relative bg-transparent text-white py-24 px-6 md:px-12 overflow-hidden">
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
 
@@ -73,12 +73,12 @@ export default function About() {
           shadow-[0_10px_40px_rgba(0,0,0,0.6)]">
 
             {/* IMAGE */}
-<img
-  src={aboutImg}
-  alt="about"
-  className="w-full h-full object-cover 
+            <img
+              src={aboutImg}
+              alt="about"
+              className="w-full h-full object-cover 
   transition duration-500 group-hover:scale-105"
-/>
+            />
 
             {/* SOFT GLOW */}
             <div className="absolute w-32 h-32 bg-purple-500/20 blur-2xl 

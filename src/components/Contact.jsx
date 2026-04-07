@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <div className="relative bg-transparent text-white py-20 px-6 md:px-12 overflow-hidden">
+    <div id="contact" className="relative bg-transparent text-white py-20 px-6 md:px-12 overflow-hidden">
 
       {/* subtle glow */}
       {/* <div className="absolute w-[400px] h-[400px] bg-pink-500/10 blur-3xl bottom-[-100px] left-[-100px]"></div> */}

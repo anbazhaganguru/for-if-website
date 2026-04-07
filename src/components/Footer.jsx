@@ -1,5 +1,7 @@
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
+import logo from "../assets/logo.svg";
+import logon from "../assets/logon.svg";
 
 export default function Footer() {
   return (
@@ -12,10 +14,13 @@ export default function Footer() {
 
         {/* BRAND */}
         <div>
-          <h2 className="text-white text-xl font-semibold mb-3 
-          bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            FOR-IF
-          </h2>
+
+    <div className="flex gap-3 items-center">
+
+<img src={logo} alt="logo" className="h-14 mb-6" />
+<img src={logon} alt="logo" className="h-14 mb-6" />
+
+    </div>
 
           <p className="text-sm leading-relaxed text-gray-500">
             Building scalable and modern digital solutions for startups and businesses.

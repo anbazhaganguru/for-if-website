@@ -17,7 +17,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="relative bg-transparent text-white py-24 px-6 md:px-12 overflow-hidden">
+    <div id="services" className="relative bg-transparent text-white py-24 px-6 md:px-12 overflow-hidden">
 
       {/* HEADING */}
       <motion.h2
