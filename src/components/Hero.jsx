@@ -1,8 +1,36 @@
 import { motion } from "framer-motion";
+import logo from "../assets/logo.svg";
+
+const scrollToSection = (id) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  const offset = 80; // navbar height adjust
+  const top = el.offsetTop - offset;
+
+  window.scrollTo({
+    top,
+    behavior: "smooth",
+  });
+};
 
 export default function Hero() {
   return (
     <div id="home" className="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden bg-transparent text-white">
+
+
+      {/* 🔥 BACKGROUND LOGO */}
+      <img
+        src={logo}
+        alt="bg-logo"
+        className="absolute 
+  w-[250px] md:w-[400px] lg:w-[500px] 
+  opacity-5 
+  blur-[2px] 
+  pointer-events-none 
+  select-none"
+      />
+
 
       {/* SUBTLE GRADIENT GLOW */}
       {/* <div className="absolute w-[500px] h-[500px] bg-gradient-to-r from-purple-600 to-pink-500 blur-3xl opacity-20 top-[-100px]"></div>
@@ -38,21 +66,23 @@ export default function Hero() {
         transition={{ delay: 0.6 }}
         className="mt-8 flex gap-4"
       >
-        <motion.button
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-6 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 
-          text-white shadow-[0_0_15px_#c026d3] hover:shadow-[0_0_25px_#ff2daa] transition"
-        >
-          Get Started
-        </motion.button>
+<motion.button 
+  onClick={() => scrollToSection("contact")}
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
+  className="px-6 py-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 
+  text-white shadow-[0_0_15px_#c026d3] hover:shadow-[0_0_25px_#ff2daa] transition"
+>
+  Get Started
+</motion.button>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="px-6 py-2 rounded-lg border border-gray-600 text-gray-300 hover:border-pink-400 hover:text-white transition"
-        >
-          Learn More
-        </motion.button>
+<motion.button
+  onClick={() => scrollToSection("about")}
+  whileHover={{ scale: 1.05 }}
+  className="px-6 py-2 rounded-lg border border-gray-600 text-gray-300 hover:border-pink-400 hover:text-white transition"
+>
+  Learn More
+</motion.button>
       </motion.div>
 
     </div>
