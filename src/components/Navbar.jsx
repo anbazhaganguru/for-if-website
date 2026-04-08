@@ -1,10 +1,20 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiUser } from "react-icons/fi";
 import logo from "../assets/logo.svg";
 import logon from "../assets/logon.svg";
+import { useNavigate } from "react-router-dom";
+
+
+  
+
+
 
 export default function Navbar() {
+
+  const navigate = useNavigate(); // ✅ inside component
+  
+
   const [open, setOpen] = useState(false);
 
   const scrollToSection = (id) => {
@@ -23,55 +33,51 @@ export default function Navbar() {
   const menuItems = [
     { name: "Home", id: "home" },
     { name: "Services", id: "services" },
+    { name: "Solutions", id: "services" }, // temporary same section
+    { name: "Blog", id: "about" }, // temporary
     { name: "About", id: "about" },
     { name: "Contact", id: "contact" },
   ];
 
   const navItemClass =
-    "relative text-gray-600 uppercase cursor-pointer tracking-[0.1em] transition duration-300 group";
+    "relative text-gray-700 uppercase cursor-pointer tracking-[0.08em] transition duration-300 group";
 
   const underlineClass =
     "absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 group-hover:w-full";
 
   return (
-    <motion.nav
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      className="sticky top-4 z-50 mx-auto w-[95%] md:w-[90%] 
-      px-6 md:px-12 py-4 
-      rounded-2xl 
-      bg-gradient-to-r from-[#f3f0ff] via-[#ede9ff] to-[#f8f5ff] 
-      backdrop-blur-xl border border-white/40 
-      shadow-[0_10px_40px_rgba(0,0,0,0.15)]"
-    >
+<motion.nav
+  initial={{ y: -60, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  className="sticky top-0 z-50 w-full 
+px-6 md:px-12 py-4 
+bg-gradient-to-r from-[#f3f0ff] via-[#ede9ff] to-[#f8f5ff] 
+backdrop-blur-xl border-b border-purple-100 
+shadow-[0_8px_30px_rgba(168,85,247,0.25),0_4px_20px_rgba(236,72,153,0.15)]"
+>
 
-      {/* CONTENT */}
       <div className="flex items-center justify-between">
 
-        {/* 🔥 LOGO (LAYER STYLE) */}
+        {/* 🔥 LOGO */}
         <div
-          className="flex items-center gap-2.5 cursor-pointer group"
+          className="flex items-center gap-1.5 cursor-pointer group"
           onClick={() => scrollToSection("home")}
         >
           <img
             src={logo}
             alt="logo"
-            className="h-8 md:h-10 
-            drop-shadow-[0_4px_10px_rgba(0,0,0,0.15)] 
-            transition group-hover:scale-105"
+            className="h-8 md:h-10 transition group-hover:scale-105"
           />
 
           <img
             src={logon}
             alt="logo-text"
-            className="h-6 md:h-7 
-            drop-shadow-[0_2px_6px_rgba(0,0,0,0.1)] 
-            opacity-90 group-hover:opacity-100 transition"
+            className="h-11 sm:h-12 md:h-13 lg:h-15 opacity-90 group-hover:opacity-100 transition"
           />
         </div>
 
         {/* 🔥 DESKTOP MENU */}
-        <div className="hidden md:flex gap-10 text-[13px] font-medium">
+        <div className="hidden md:flex gap-8 text-[13px] font-medium">
           {menuItems.map((item) => (
             <div
               key={item.name}
@@ -86,8 +92,20 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* 🔥 CTA BUTTON */}
-        <div className="hidden md:block">
+        {/* 🔥 RIGHT SIDE */}
+        <div className="hidden md:flex items-center gap-4">
+
+{/* LOGIN ICON */}
+<div
+  onClick={() => navigate("/login")}
+  className="p-2 rounded-lg cursor-pointer 
+  hover:bg-purple-100 transition 
+  active:scale-95"
+>
+  <FiUser className="text-gray-700 text-lg" />
+</div>
+
+          {/* CTA BUTTON */}
           <button
             onClick={() => scrollToSection("contact")}
             className="px-5 py-2 rounded-lg text-white text-sm 
@@ -113,36 +131,57 @@ export default function Navbar() {
 
       </div>
 
-      {/* 🔥 MOBILE MENU (MATCH SAME STYLE) */}
+      {/* 🔥 MOBILE MENU */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.98 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
             className="mt-4 flex flex-col items-center gap-6 py-6 
-            rounded-xl 
             bg-gradient-to-r from-[#f3f0ff] via-[#ede9ff] to-[#f8f5ff] 
-            backdrop-blur-xl border border-white/40"
+            border-t border-purple-100 md:hidden"
           >
-            {menuItems.map((item, i) => (
-              <motion.div
+            {menuItems.map((item) => (
+              <div
                 key={item.name}
                 onClick={() => {
                   setOpen(false);
                   scrollToSection(item.id);
                 }}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 }}
-                className="text-gray-700 text-lg uppercase tracking-[0.15em] cursor-pointer group"
+                className="text-gray-700 text-lg uppercase tracking-[0.12em] cursor-pointer hover:text-purple-600"
               >
-                <span className="group-hover:text-purple-600 transition">
-                  {item.name}
-                </span>
-              </motion.div>
+                {item.name}
+              </div>
             ))}
+
+{/* MOBILE LOGIN */}
+<div
+  onClick={() => {
+    setOpen(false);
+    navigate("/login");
+  }}
+  className="flex items-center gap-2 px-4 py-2 rounded-lg 
+  bg-white/70 backdrop-blur-md 
+  border border-purple-100 
+  text-gray-700 cursor-pointer 
+  hover:bg-purple-100 transition active:scale-95"
+>
+  <FiUser />
+  <span className="text-sm font-medium">Login</span>
+</div>
+
+            {/* MOBILE BUTTON */}
+            <button
+              onClick={() => {
+                setOpen(false);
+                scrollToSection("contact");
+              }}
+              className="px-5 py-2 rounded-lg text-white text-sm 
+              bg-gradient-to-r from-purple-600 to-pink-500"
+            >
+              Get Started
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
