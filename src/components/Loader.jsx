@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import logo from "../assets/logo.svg";
+import logooo from "../assets/logooo.svg";
 
 export default function Loader() {
   return (
     <div className="fixed inset-0 bg-[#0A0A0F] flex items-center justify-center z-50">
 
       <motion.img
-        src={logo}
-        alt="logo"
+        src={logooo}
+        alt="logooo"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}

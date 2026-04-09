@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from "../assets/logo.svg";
+import logooo from "../assets/logooo.svg";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
@@ -21,8 +21,8 @@ export default function Hero() {
 
       {/* 🔥 BACKGROUND LOGO */}
       <img
-        src={logo}
-        alt="bg-logo"
+        src={logooo}
+        alt="bg-logooo"
         className="absolute 
   w-[250px] md:w-[400px] lg:w-[500px] 
   opacity-5 

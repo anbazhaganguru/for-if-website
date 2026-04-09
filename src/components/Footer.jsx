@@ -14,8 +14,8 @@ export default function Footer() {
         {/* 🔥 BRAND */}
         <div>
           <div className="flex gap-2.5 items-center mb-4">
-            <img src={logo} alt="logo" className="h-8 md:h-10" />
-            <img src={logon} alt="logo" className="h-6 md:h-7" />
+            <img src={logo} alt="logo" className="h-10 md:h-15" />
+            {/* <img src={logon} alt="logo" className="h-6 md:h-7" /> */}
           </div>
 
           <p className="text-sm leading-relaxed text-gray-500 max-w-sm">

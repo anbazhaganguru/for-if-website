@@ -66,14 +66,14 @@ shadow-[0_8px_30px_rgba(168,85,247,0.25),0_4px_20px_rgba(236,72,153,0.15)]"
           <img
             src={logo}
             alt="logo"
-            className="h-8 md:h-10 transition group-hover:scale-105"
+            className="h-10 md:h-14 transition group-hover:scale-105"
           />
 
-          <img
+          {/* <img
             src={logon}
             alt="logo-text"
             className="h-11 sm:h-12 md:h-13 lg:h-15 opacity-90 group-hover:opacity-100 transition"
-          />
+          /> */}
         </div>
 
         {/* 🔥 DESKTOP MENU */}
