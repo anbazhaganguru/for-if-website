@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
-import logo from "../assets/logo.svg";
+import logooo from "../assets/logooo.svg";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -26,8 +26,8 @@ export default function Login() {
 
       {/* 🔥 BACKGROUND LOGO */}
       <img
-        src={logo}
-        alt="bg-logo"
+        src={logooo}
+        alt="bg-logooo"
         className="absolute 
         w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] 
         opacity-5 blur-[2px] 
